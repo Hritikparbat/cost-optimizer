@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: k8s-cost-optimizer
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: optimizer
+            image: k8s-optimizer:v2
+            imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure
