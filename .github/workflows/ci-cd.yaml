@@ -30,6 +30,5 @@ jobs:
         mkdir -p ~/.kube
         echo "${{ secrets.KUBE_CONFIG }}" > ~/.kube/config
 
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl apply -f cronjob.yaml
+    - name: Deploy to EKS
+      run: kubectl apply -f cronjob.yaml

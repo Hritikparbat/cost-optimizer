@@ -10,6 +10,6 @@ spec:
         spec:
           containers:
           - name: optimizer
-            image: k8s-optimizer:v2
+            image: hritik18/k8s-optimizer:latest
             imagePullPolicy: IfNotPresent
           restartPolicy: OnFailure
