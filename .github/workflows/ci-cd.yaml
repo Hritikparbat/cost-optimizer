@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Debug Docker Login
+      run: |
+        echo "Logging into Docker..."
+        docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
+
     - name: Checkout Code
       uses: actions/checkout@v4
 
